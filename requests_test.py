@@ -5,9 +5,9 @@ import requests
 
 def main():
 
-    print("Latest rassia looses:")
+    print("Latest fucking rassia looses:")
 
-    url = "https://russianwarship.rip/api/v2/statistics/latest"
+    url = "http://russianwarship.rip/api/v2/statistics/latest"
 
     resp = requests.get(url=url)
 
