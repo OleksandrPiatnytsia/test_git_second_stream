@@ -5,6 +5,8 @@ import requests
 
 def main():
 
+    print("Latest rassia looses:")
+
     url = "https://russianwarship.rip/api/v2/statistics/latest"
 
     resp = requests.get(url=url)
