@@ -12,8 +12,8 @@ def main():
 
     resp = requests.get(url=url)
     print(f"response status_code{resp.status_code}")
-    pprint(resp.json().get("data").get("increase"))
-
+    # pprint(resp.json().get("data").get("increase"))
+    print("test")
 
 if __name__ == "__main__":
     main()
