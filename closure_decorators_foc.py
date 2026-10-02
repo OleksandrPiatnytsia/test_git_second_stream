@@ -16,11 +16,10 @@ Run:
     python first_class_objects_and_decorators.py
 """
 
-
-
 # ============================================================
 # 1. CLOSURE
 # ============================================================
+
 
 def create_greeting(name):
 
@@ -46,8 +45,10 @@ def create_greeting(name):
 # 2. FIRST-CLASS OBJECTS/COTIZENS
 # ============================================================
 
+
 def hello():
     print("Hello!")
+
 
 # foo = hello
 
@@ -55,11 +56,9 @@ def hello():
 # foo()
 
 
-
 # ============================================================
 # 3. FUNCTION AS AN ARGUMENT
 # ============================================================
-
 
 
 def execute(func):
@@ -72,6 +71,7 @@ def execute(func):
 # ============================================================
 # 4. FUNCTION RETURNING ANOTHER FUNCTION
 # ============================================================
+
 
 def create_function():
 
@@ -90,6 +90,7 @@ def create_function():
 # 5. NESTED FUNCTIONS
 # ============================================================
 
+
 def outer():
 
     def inner():
@@ -105,6 +106,7 @@ def outer():
 # ============================================================
 # 6. SIMPLE DECORATOR
 # ============================================================
+
 
 def decorator(func):
 
@@ -148,6 +150,7 @@ def decorated_hello():
 # ============================================================
 # 7. @ DECORATOR SYNTAX
 # ============================================================
+
 
 def simple_decorator(func):
 
@@ -245,6 +248,7 @@ def add(a, b):
     print(f"a = {a} b = {b}")
     return a + b
 
+
 # add(b=20, a=10)
 
 # hello_user("Alex")
@@ -265,6 +269,7 @@ def add(a, b):
 # ============================================================
 
 from functools import wraps
+
 
 def log_with_wraps(func):
 
@@ -315,6 +320,7 @@ def multiply(a, b):
 # 11. DECORATOR WITH PARAMETERS
 # ============================================================
 
+
 def retry(attempts):
 
     def decorator(func):
@@ -330,10 +336,7 @@ def retry(attempts):
                     if attempt == attempts - 1:
                         raise
 
-                    print(
-                        f"Attempt {attempt + 1} failed. "
-                        f"Retrying..."
-                    )
+                    print(f"Attempt {attempt + 1} failed. " f"Retrying...")
 
         return wrapper
 
@@ -382,6 +385,7 @@ def get_data():
 # 12. MULTIPLE DECORATORS
 # ============================================================
 
+
 def decorator_a(func):
 
     @wraps(func)
@@ -427,6 +431,7 @@ hello_multiple()
 
 import time
 
+
 def measure_time(func):
 
     @wraps(func)
@@ -439,10 +444,7 @@ def measure_time(func):
 
         elapsed = time.perf_counter() - start
 
-        print(
-            f"{func.__name__} finished "
-            f"in {elapsed:.6f} seconds"
-        )
+        print(f"{func.__name__} finished " f"in {elapsed:.6f} seconds")
 
         return result
 
@@ -531,10 +533,7 @@ def retry_on_error(attempts):
                     return func(*args, **kwargs)
 
                 except Exception as exc:
-                    print(
-                        f"[RETRY] Attempt "
-                        f"{attempt + 1} failed: {exc}"
-                    )
+                    print(f"[RETRY] Attempt " f"{attempt + 1} failed: {exc}")
 
                     if attempt == attempts - 1:
                         raise
@@ -548,6 +547,7 @@ def retry_on_error(attempts):
 @retry_on_error(3)
 def divide(a, b):
     return a / b
+
 
 # result = divide(10, 2)
 #
@@ -569,6 +569,3 @@ def divide(a, b):
 #
 # This is the fundamental mechanism behind many
 # Python frameworks and libraries.
-
-
-
