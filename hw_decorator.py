@@ -3,11 +3,13 @@ from functools import wraps
 
 CACHE_DICT = {}
 
+
 def get_cache_key_hashlib(func, args, kwargs):
     cache_data = (
         f"{func.__module__}.{func.__qualname__}:{args}:{sorted(kwargs.items())}"
     )
     return hashlib.sha256(cache_data.encode()).hexdigest()
+
 
 def cache_result(func):
 
@@ -51,12 +53,13 @@ def square(a):
     print(f"Call square: {a}**2 = {a ** 2}")
     return a**2
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     add(1, 2)
     add(1, 2)
-    add(b = 2, a = 1)
-    add(b=2, a = 1)
-    add(a = 1, b = 2)
+    add(b=2, a=1)
+    add(b=2, a=1)
+    add(a=1, b=2)
     # square(2)
     # square(2)
     # square(2)

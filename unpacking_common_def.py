@@ -1,4 +1,3 @@
-
 def base_zip_def():
     names = ["Oleksandr", "Ivan", "Anna"]
     scores = [85, 92, 78]
@@ -19,16 +18,16 @@ def list_zip_def():
     print(users)
     # [('Oleksandr', 37), ('Ivan', 25), ('Anna', 30)]
 
+
 def swap():
     a = 1
     b = 2
 
     print(f"a = {a}, b = {b}")
 
-    a,b = b,a
+    a, b = b, a
 
     print(f"a = {a}, b={b}")
-
 
 
 def dict_zip_def():
@@ -50,7 +49,7 @@ def base_unpacking_def():
     # print(age)
     # print(city)
 
-    num_dict = {i:str(i) for i in range(10)}
+    num_dict = {i: str(i) for i in range(10)}
 
     # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -91,10 +90,10 @@ def unpacking_func_args_def():
         print(type(args))
         print(args)
 
-        a,b,c = args
+        a, b, c = args
         print(type(c))
 
-        return a+b
+        return a + b
 
     print(calculate_sum(1, 2, 3))
     print(calculate_sum(10, 20, 30, 40))
@@ -133,7 +132,7 @@ def square(x):
 
 def lambda_def():
 
-    _square = lambda x, y: x**2+y
+    _square = lambda x, y: x**2 + y
     print(_square(5))
     # 25
 
@@ -150,7 +149,7 @@ def map_lambda_def():
     #     squares.append(sq_res)
     # print(squares)
 
-    squares = map(lambda x: x ** 2, numbers)
+    squares = map(lambda x: x**2, numbers)
     #
     # print(list(squares))
     # # [1, 4, 9, 16, 25]
@@ -281,4 +280,3 @@ def finally_def():
 
 if __name__ == "__main__":
     finally_def()
-
